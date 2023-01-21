@@ -1,12 +1,13 @@
 import React from 'react';
-// import HomePage from '../pages/HomePage/HomePage';
-import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import HomePage from '../pages/HomePage/HomePage';
 
 export default function Home() {
   return (
     <div>
-      {/* <HomePage/> */}
-      <ProfilePage/>
+      <HomePage/>
+      {/* <ProfilePage/> */}
+      {/* <LoginPage/> */}
+      {/* <RegisterPage/> */}
     </div>
   )
 }
