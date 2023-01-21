@@ -1,10 +1,8 @@
 import { faBookmark, faBriefcase, faCalendar, faFeed, faGraduationCap, faMessage, faPlayCircle, faQuestion, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import friend1 from "../../assets/person/2.jpeg";
-import friend2 from "../../assets/person/3.jpeg";
-import friend3 from "../../assets/person/4.jpeg";
-import friend4 from "../../assets/person/5.jpeg";
+import CloseFriends from './CloseFriends';
+import { Users } from './Data';
 import style from "./style.module.css";
 export default function SideBar() {
   return (
@@ -51,22 +49,11 @@ export default function SideBar() {
         <button className={style.button}>Show More</button>
         <hr className={style.SideBarHr}/>
         <ul className={style.friendList}>
-          <li className={style.friend}>
-            <img className={style.friendImg} src={friend1} alt='friend1'/>
-            <span className={style.friendName}>Jane Doe</span>
-          </li>
-          <li className={style.friend}>
-            <img className={style.friendImg} src={friend2} alt='friend2'/>
-            <span className={style.friendName}>Jane Doe</span>
-          </li>
-          <li className={style.friend}>
-            <img className={style.friendImg} src={friend3} alt='friend3'/>
-            <span className={style.friendName}>Jane Doe</span>
-          </li>
-          <li className={style.friend}>
-            <img className={style.friendImg} src={friend4} alt='friend4'/>
-            <span className={style.friendName}>Jane Doe</span>
-          </li>
+          {Users.map((user)=>{
+            return (
+            <CloseFriends key={user.id} profilePicture={user.profilePicture} username={user.username}/>
+            )
+          })}
         </ul>
       </div>
     </div>  
