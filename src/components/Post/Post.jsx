@@ -1,10 +1,17 @@
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import heart from "../../assets/heart.png";
 import likepng from "../../assets/like.png";
 import style from "./style.module.css";
 export default function Post({date,profilePicture,username,desc,photo,like,comment}) {
+  const [liked,setLiked] = useState(like);
+  const [isliked,setIsLiked] = useState(false);
+
+  const likeHandler =()=>{
+    setLiked((prev)=>isliked?prev-1:prev+1);
+    setIsLiked((prev)=>!prev)
+  }
   return (
     <>
         <div className={style.post}>
@@ -25,9 +32,9 @@ export default function Post({date,profilePicture,username,desc,photo,like,comme
             </div>
             <div className={style.bottom}>
               <div className={style.postBottomLeft}>
-                <img className={style.likeIcon} src={heart}  alt="" />
-                <img className={style.likeIcon} src={likepng} alt="" />
-                <span className={style.postLikeCounter}>{like} people like it</span>
+                <img onClick={likeHandler} className={style.likeIcon} src={heart}  alt="" />
+                <img onClick={likeHandler} className={style.likeIcon} src={likepng} alt="" />
+                <span className={style.postLikeCounter}>{liked} people like it</span>
               </div>
               <div className={style.postBottomRight}>
                 <span className={style.postCommentText}>{comment} comments</span>
