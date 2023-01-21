@@ -1,5 +1,5 @@
 # demo
-Open [https://personal-portfolio-260.pages.dev/](https://personal-portfolio-260.pages.dev/) to view project.
+Open [https://social-cw4.pages.dev/](https://social-cw4.pages.dev/) to view project.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
